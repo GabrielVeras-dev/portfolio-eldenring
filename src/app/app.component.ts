@@ -5,6 +5,7 @@ import { SobreComponent } from './sections/sobre/sobre.component';
 import { ProjetosComponent } from './sections/projetos/projetos.component';
 import { HabilidadesComponent } from './sections/habilidades/habilidades.component';
 import { ExperienciaComponent } from './sections/experiencia/experiencia.component';
+import { ContatoComponent } from './sections/contato/contato.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { ExperienciaComponent } from './sections/experiencia/experiencia.compone
     SobreComponent,
     ProjetosComponent,
     HabilidadesComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    ContatoComponent
   ],
   template: `
     <app-navbar />
@@ -25,6 +27,7 @@ import { ExperienciaComponent } from './sections/experiencia/experiencia.compone
       <app-projetos />
       <app-habilidades />
       <app-experiencia />
+      <app-contato />
     </main>
   `
 })

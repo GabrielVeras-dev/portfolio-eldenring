@@ -1,0 +1,46 @@
+<section id="contato" class="contato">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">Invocar o Jogador</p>
+      <h2 class="section-title">Contato</h2>
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-diamond"></div>
+        <div class="orn-line right"></div>
+      </div>
+    </div>
+
+    <p class="contato-intro">
+      Estou aberto a oportunidades em desenvolvimento backend Java
+      e conexões com profissionais de tecnologia. Vamos conversar!
+    </p>
+
+    <div class="contacts-grid">
+      @for (item of contacts; track item.label) {
+      <a [href]="item.url"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="contact-card">
+        <span class="contact-icon">{{ item.icon }}</span>
+        <div class="contact-info">
+          <span class="contact-label">{{ item.label }}</span>
+          <span class="contact-value">{{ item.value }}</span>
+        </div>
+      </a>
+      }
+    </div>
+
+    <div class="contato-footer">
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-diamond"></div>
+        <div class="orn-line right"></div>
+      </div>
+      <p class="footer-text">
+        Rise, Tarnished &nbsp;·&nbsp; Gabriel Veras &nbsp;·&nbsp; {{ year }}
+      </p>
+    </div>
+
+  </div>
+</section>
