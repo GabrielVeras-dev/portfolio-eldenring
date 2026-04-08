@@ -14,14 +14,15 @@ export class NavbarComponent {
   isScrolled = signal(false);
   menuOpen = signal(false);
 
-  navItems = [
-    { id: 'home',        label: 'Início'       },
-    { id: 'sobre',       label: 'Sobre'        },
-    { id: 'projetos',    label: 'Projetos'     },
-    { id: 'habilidades', label: 'Habilidades'  },
-    { id: 'experiencia', label: 'Experiência'  },
-    { id: 'contato',     label: 'Contato'      }
-  ];
+navItems = [
+  { id: 'home',          label: 'Início'        },
+  { id: 'sobre',         label: 'Sobre'         },
+  { id: 'projetos',      label: 'Projetos'      },
+  { id: 'habilidades',   label: 'Habilidades'   },
+  { id: 'experiencia',   label: 'Experiência'   },
+  { id: 'curiosidades',  label: 'Curiosidades'  },
+  { id: 'contato',       label: 'Contato'       }
+];
 
   @HostListener('window:scroll')
   onScroll(): void {

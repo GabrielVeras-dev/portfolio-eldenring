@@ -1,0 +1,29 @@
+<section id="curiosidades" class="curiosidades">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">Além do Código</p>
+      <h2 class="section-title">Curiosidades</h2>
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-diamond"></div>
+        <div class="orn-line right"></div>
+      </div>
+      <p class="section-subtitle">
+        Um dev é mais do que seu stack. Aqui vai um pouco mais sobre quem está por trás do código.
+      </p>
+    </div>
+
+    <div class="curiosidades-grid">
+      @for (item of curiosidades; track item.title) {
+      <div class="curiosidade-card">
+        <div class="card-icon">{{ item.icon }}</div>
+        <div class="card-category">{{ item.category }}</div>
+        <h3 class="card-title">{{ item.title }}</h3>
+        <p class="card-desc">{{ item.description }}</p>
+      </div>
+      }
+    </div>
+
+  </div>
+</section>

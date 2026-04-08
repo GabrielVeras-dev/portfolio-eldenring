@@ -36,8 +36,8 @@ export class ExperienciaComponent {
       role: 'Técnico de Operações e Suporte',
       company: 'Central IT — Cliente: Imprensa Nacional · Brasília, DF',
       period: 'Out 2022 — Abr 2024',
-      description: 'Sustentação operacional e suporte técnico avançado em ambiente corporativo. Diagnóstico e resolução de problemas em hardware, software e sistemas. Configuração de dispositivos de rede, impressoras e periféricos corporativos.',
-      techs: ['Suporte N2/N3', 'Redes', 'Windows', 'Linux', 'Hardware']
+      description: 'Sustentação operacional e suporte técnico avançado em ambiente corporativo. Diagnóstico e resolução de incidentes complexos em infraestrutura de TI, análise de conectividade, configuração e manutenção de dispositivos de rede, switches e roteadores. Responsável pela estabilidade do ambiente, gestão do ciclo de vida dos chamados, documentação técnica e melhoria contínua dos processos de suporte. Suporte especializado a usuários finais e áreas administrativas com foco em alta disponibilidade.',
+      techs: ['Suporte N2', 'Redes', 'Switches', 'Windows', 'Linux', 'Hardware', 'ITSM']
     },
     {
       role: 'Técnico de Suporte N2',

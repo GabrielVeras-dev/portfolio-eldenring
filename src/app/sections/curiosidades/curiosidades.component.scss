@@ -1,0 +1,163 @@
+.curiosidades {
+  padding: 5rem 0;
+  background: var(--bg-primary);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #c8a840;
+  margin-bottom: 0.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #e8c840;
+  margin-bottom: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 280px;
+  margin: 0 auto 1.25rem;
+}
+.orn-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 48, 0.6));
+}
+.orn-line.right {
+  background: linear-gradient(90deg, rgba(212, 168, 48, 0.6), transparent);
+}
+.orn-diamond {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--gold-mid);
+  background: var(--gold-mid);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.section-subtitle {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  color: #c8a840;
+  line-height: 1.8;
+  max-width: 550px;
+  margin: 0 auto;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Grid */
+.curiosidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card */
+.curiosidade-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-faint);
+  padding: 1.5rem 1.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.curiosidade-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c8a840, transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.curiosidade-card:hover {
+  border-color: var(--gold-border);
+  transform: translateY(-3px);
+}
+
+.curiosidade-card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.card-category {
+  font-family: 'Cinzel', serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #a08030;
+  margin-bottom: 0.4rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #e8c840;
+  margin-bottom: 0.75rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card-desc {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  color: #c8a840;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Light mode */
+:host-context([data-theme="light"]) {
+  .eyebrow { color: #6a4400; }
+  .section-title { color: #7a5000; }
+  .section-subtitle { color: #5a3e00; }
+  .card-category { color: #8a6000; }
+  .card-title { color: #7a5000; }
+  .card-desc { color: #5a3e00; }
+}
+
+@media (max-width: 600px) {
+  .curiosidades-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .section-subtitle {
+    white-space: normal;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+}

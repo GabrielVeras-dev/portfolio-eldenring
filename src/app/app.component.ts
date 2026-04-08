@@ -5,6 +5,7 @@ import { SobreComponent } from './sections/sobre/sobre.component';
 import { ProjetosComponent } from './sections/projetos/projetos.component';
 import { HabilidadesComponent } from './sections/habilidades/habilidades.component';
 import { ExperienciaComponent } from './sections/experiencia/experiencia.component';
+import { CuriosidadesComponent } from './sections/curiosidades/curiosidades.component';
 import { ContatoComponent } from './sections/contato/contato.component';
 
 @Component({
@@ -17,6 +18,7 @@ import { ContatoComponent } from './sections/contato/contato.component';
     ProjetosComponent,
     HabilidadesComponent,
     ExperienciaComponent,
+    CuriosidadesComponent,
     ContatoComponent
   ],
   template: `
@@ -27,6 +29,7 @@ import { ContatoComponent } from './sections/contato/contato.component';
       <app-projetos />
       <app-habilidades />
       <app-experiencia />
+      <app-curiosidades />
       <app-contato />
     </main>
   `
