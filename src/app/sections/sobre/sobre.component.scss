@@ -115,7 +115,7 @@
   text-transform: uppercase;
   padding: 0.65rem 1.5rem;
   background: rgba(200, 160, 30, 0.15);
-  color: #f0d040;
+  color: #d4b86a;
   border: 1px solid rgba(220, 185, 60, 0.6);
   text-decoration: none;
   transition: all 0.3s;
@@ -183,5 +183,33 @@
   .sobre-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+}
+
+:host-context([data-theme="light"]) {
+  .sobre-text p { color: #5a3e00; }
+  .sobre-text strong { color: #3a2400; }
+  .fact { color: #5a3e00; }
+  .stat-num { color: #7a5000; }
+  .stat-label { color: #6a4400; }
+
+  .btn-primary {
+    color: #3a2000;
+    border-color: rgba(100, 65, 0, 0.7);
+    background: rgba(150, 100, 0, 0.15);
+  }
+  .btn-primary:hover {
+    color: #1a0e00;
+    background: rgba(150, 100, 0, 0.28);
+  }
+
+  .btn-secondary {
+    color: #4a3000;
+    border-color: rgba(100, 65, 0, 0.5);
+  }
+  .btn-secondary:hover {
+    color: #1a0e00;
+    border-color: rgba(100, 65, 0, 0.75);
+    background: rgba(150, 100, 0, 0.12);
   }
 }

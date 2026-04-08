@@ -1,0 +1,52 @@
+<section id="projetos" class="projetos">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">Runas Conquistadas</p>
+      <h2 class="section-title">Projetos</h2>
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-diamond"></div>
+        <div class="orn-line right"></div>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      @for (project of projects; track project.title) {
+      <div class="project-card">
+
+        <div class="card-img" [style.background-image]="'url(' + project.imgUrl + ')'">
+          <div class="card-img-overlay"></div>
+          <div class="card-corner tl"></div>
+          <div class="card-corner br"></div>
+        </div>
+
+        <div class="card-body">
+          <h3 class="card-title">{{ project.title }}</h3>
+          <p class="card-desc">{{ project.description }}</p>
+
+          <div class="card-techs">
+            @for (tech of project.techs; track tech) {
+            <span class="tech-badge">{{ tech }}</span>
+            }
+          </div>
+
+          <div class="card-links">
+            <a [href]="project.githubUrl"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-ghost">GitHub</a>
+            @if (project.demoUrl) {
+            <a [href]="project.demoUrl"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-gold">Demo</a>
+            }
+          </div>
+        </div>
+
+      </div>
+      }
+    </div>
+  </div>
+</section>
