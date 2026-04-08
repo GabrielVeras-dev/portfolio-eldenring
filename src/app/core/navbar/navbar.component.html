@@ -1,0 +1,47 @@
+<nav class="navbar" [class.scrolled]="isScrolled()">
+  <div class="nav-inner">
+
+    <div class="nav-logo" (click)="scrollTo('home')">
+      <span class="logo-gv">GV</span>
+      <span class="logo-dot">·</span>
+      <span class="logo-dev">dev</span>
+    </div>
+
+    <ul class="nav-links">
+      @for (item of navItems; track item.id) {
+      <li>
+        <button class="nav-link" (click)="scrollTo(item.id)">
+          {{ item.label }}
+        </button>
+      </li>
+      }
+    </ul>
+
+    <div class="nav-actions">
+      <button class="theme-btn" (click)="toggleTheme()" title="Mudar tema">
+        @if (themeService.isDark()) {
+        ☀
+        } @else {
+        ☾
+        }
+      </button>
+
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+  </div>
+
+  @if (menuOpen()) {
+  <div class="mobile-menu">
+    @for (item of navItems; track item.id) {
+    <button class="mobile-link" (click)="scrollTo(item.id)">
+      {{ item.label }}
+    </button>
+    }
+  </div>
+  }
+</nav>

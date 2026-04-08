@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cinzel', serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0b07;
+}
+::-webkit-scrollbar-thumb {
+  background: #a07820;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c8a030;
+}
+
+:root {
+  --bg-primary:   #0a0806;
+  --bg-secondary: #0e0b07;
+  --bg-card:      #120e06;
+  --text-primary:   #e8d8b0;
+  --text-secondary: #c8a840;
+  --text-muted:     #b09848;
+  --text-faint:     #8a7838;
+  --gold-bright:  #f8f060;
+  --gold-main:    #e8c840;
+  --gold-mid:     #d4a830;
+  --gold-dark:    #a07820;
+  --gold-border:  rgba(220, 185, 60, 0.35);
+  --red-accent:   #c03828;
+  --border-subtle: rgba(160, 130, 40, 0.2);
+  --border-faint:  rgba(120, 100, 30, 0.15);
+  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] {
+  --bg-primary:   #f5edd8;
+  --bg-secondary: #ede0c0;
+  --bg-card:      #fff8e8;
+  --text-primary:   #1a1200;
+  --text-secondary: #7a5800;
+  --text-muted:     #8a6810;
+  --text-faint:     #a07820;
+  --gold-bright:  #a06000;
+  --gold-main:    #b87800;
+  --gold-mid:     #c88800;
+  --gold-dark:    #8a5800;
+  --gold-border:  rgba(160, 110, 0, 0.4);
+  --red-accent:   #b03020;
+  --border-subtle: rgba(140, 100, 0, 0.2);
+  --border-faint:  rgba(120, 90, 0, 0.12);
+  --shadow-card:   0 4px 20px rgba(100, 70, 0, 0.12);
+}

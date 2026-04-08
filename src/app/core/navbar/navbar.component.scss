@@ -1,0 +1,124 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(6, 4, 2, 0.95);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  border-bottom-color: var(--border-subtle);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+}
+.logo-gv  { color: #f0d840; }
+.logo-dot { color: #e05040; }
+.logo-dev { color: #f0d840; font-size: 0.95rem; }
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c8a840;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  transition: color 0.25s;
+}
+.nav-link:hover {
+  color: var(--gold-bright);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-btn {
+  background: transparent;
+  border: 1px solid rgba(200, 168, 60, 0.4);
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #c8a840;
+  font-size: 1rem;
+  transition: all 0.25s;
+}
+.theme-btn:hover {
+  border-color: var(--gold-border);
+  color: var(--gold-bright);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold-main);
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(6, 4, 2, 0.98);
+}
+.mobile-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #c8a840;
+  background: transparent;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.mobile-link:hover {
+  color: var(--gold-bright);
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: flex; }
+}

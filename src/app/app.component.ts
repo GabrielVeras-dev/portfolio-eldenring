@@ -1,12 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { HeroComponent } from './sections/hero/hero.component';
+import { SobreComponent } from './sections/sobre/sobre.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [NavbarComponent, HeroComponent, SobreComponent],
+  template: `
+    <app-navbar />
+    <main>
+      <app-hero />
+      <app-sobre />
+    </main>
+  `
 })
-export class AppComponent {
-  title = 'portfolio-elden';
-}
+export class AppComponent {}
