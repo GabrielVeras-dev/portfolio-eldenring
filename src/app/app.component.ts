@@ -4,6 +4,7 @@ import { HeroComponent } from './sections/hero/hero.component';
 import { SobreComponent } from './sections/sobre/sobre.component';
 import { ProjetosComponent } from './sections/projetos/projetos.component';
 import { HabilidadesComponent } from './sections/habilidades/habilidades.component';
+import { ExperienciaComponent } from './sections/experiencia/experiencia.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { HabilidadesComponent } from './sections/habilidades/habilidades.compone
     HeroComponent,
     SobreComponent,
     ProjetosComponent,
-    HabilidadesComponent
+    HabilidadesComponent,
+    ExperienciaComponent
   ],
   template: `
     <app-navbar />
@@ -22,6 +24,7 @@ import { HabilidadesComponent } from './sections/habilidades/habilidades.compone
       <app-sobre />
       <app-projetos />
       <app-habilidades />
+      <app-experiencia />
     </main>
   `
 })

@@ -1,0 +1,46 @@
+<section id="experiencia" class="experiencia">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">A Jornada Profissional</p>
+      <h2 class="section-title">Experiência</h2>
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-diamond"></div>
+        <div class="orn-line right"></div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.company; let last = $last) {
+      <div class="timeline-item">
+
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          @if (!last) {
+          <div class="marker-line"></div>
+          }
+        </div>
+
+        <div class="timeline-content">
+          <div class="exp-header">
+            <div class="exp-info">
+              <h3 class="exp-role">{{ exp.role }}</h3>
+              <p class="exp-company">{{ exp.company }}</p>
+            </div>
+            <span class="exp-period">{{ exp.period }}</span>
+          </div>
+          <p class="exp-desc">{{ exp.description }}</p>
+          <div class="exp-techs">
+            @for (tech of exp.techs; track tech) {
+            <span class="tech-tag">{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+      </div>
+      }
+    </div>
+
+  </div>
+</section>
