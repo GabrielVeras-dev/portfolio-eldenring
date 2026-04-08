@@ -1,0 +1,36 @@
+<section id="habilidades" class="habilidades">
+  <div class="container">
+
+    <div class="section-header">
+      <p class="eyebrow">Armas & Magias</p>
+      <h2 class="section-title">Habilidades</h2>
+      <div class="ornament">
+        <div class="orn-line"></div>
+        <div class="orn-diamond"></div>
+        <div class="orn-line right"></div>
+      </div>
+    </div>
+
+    <div class="groups-grid">
+      @for (group of groups; track group.label) {
+      <div class="skill-group">
+
+        <div class="group-header">
+          <span class="group-icon">{{ group.icon }}</span>
+          <h3 class="group-label">{{ group.label }}</h3>
+        </div>
+
+        <div class="skills-list">
+          @for (skill of group.skills; track skill.name) {
+          <span class="skill-badge" [ngClass]="skill.category">
+                {{ skill.name }}
+              </span>
+          }
+        </div>
+
+      </div>
+      }
+    </div>
+
+  </div>
+</section>
