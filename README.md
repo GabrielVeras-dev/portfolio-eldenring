@@ -7,11 +7,11 @@ API REST de autenticação e autorização desenvolvida com **Java 21**, **Sprin
 ## 🚀 Tecnologias
 
 | Tecnologia | Uso |
-|----------|-----|
+|-----------|-----|
 | **Java 21** | Linguagem principal |
 | **Spring Boot 4.x** | Framework base |
 | **Spring Security 7** | Autenticação e autorização |
-| **JWT** | Geração e validação de tokens |
+| **JWT (jjwt 0.12.6)** | Geração e validação de tokens |
 | **BCrypt** | Criptografia de senhas |
 | **Spring Data JPA** | Acesso ao banco de dados |
 | **H2 Database** | Banco em memória para desenvolvimento |
