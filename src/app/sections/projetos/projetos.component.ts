@@ -22,28 +22,28 @@ export class ProjetosComponent {
     {
       title: 'Rick and Morty API',
       description: 'API REST em Java consumindo a API pública do Rick and Morty...',
-      techs: ['Java 17', 'Spring Boot', 'REST API', 'Maven'],
+      techs: ['Java 17', 'Spring Boot', 'REST API','API Integration', 'Maven','MVC','Angular','TypeScript','CSS/SCSS'],
       githubUrl: 'https://github.com/GabrielVeras-dev/rickandmorty-frontend',
       imgUrl: 'assets/images/rickandmorty.jpeg'
     },
     {
       title: 'Finanças API',
       description: 'API backend para gerenciamento financeiro com CRUD de entidades, regras de negócio, arquitetura REST e estrutura preparada para integração com frontend.',
-      techs: ['Java', 'Spring Boot', 'JPA/Hibernate', 'REST API'],
+      techs: ['Java', 'Spring Boot', 'JPA/Hibernate', 'REST API','LAYERED ARCHITECTURE'],
       githubUrl: 'https://github.com/GabrielVeras-dev/financas-api',
       imgUrl: 'assets/images/financasapi.jpeg'
     },
     {
       title: 'Java OOP Practice',
       description: 'Projeto dedicado à prática dos pilares da POO: Encapsulamento, Herança, Polimorfismo e Abstração, com modelagem orientada a objetos.',
-      techs: ['Java 17', 'POO', 'Design de Classes'],
+      techs: ['Java 17', 'POO', 'Design de Classes','SOLID'],
       githubUrl: 'https://github.com/GabrielVeras-dev/java-oop-practice',
       imgUrl: 'assets/images/javapoo.jpeg'
     },
     {
       title: 'Java Core Practice',
       description: 'Projeto focado nos fundamentos do Core Java: estruturas de controle, Collections Framework, manipulação de objetos e tratamento de exceções.',
-      techs: ['Java 17', 'Collections', 'POO'],
+      techs: ['Java 17', 'Collections', 'POO','Core Java','Collections'],
       githubUrl: 'https://github.com/GabrielVeras-dev/java-core-practice',
       imgUrl: 'assets/images/javacore.jpeg'
     }
