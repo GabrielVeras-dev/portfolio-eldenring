@@ -1,6 +1,14 @@
-# 🔐 Auth API — Spring Security + JWT
+# 🏰 Portfólio Gabriel Veras — Tema Elden Ring
 
-API REST de autenticação e autorização desenvolvida com **Java 21**, **Spring Boot** e **Spring Security**, implementando o fluxo completo de registro, login e controle de acesso com **JWT**.
+Portfólio pessoal desenvolvido com **Angular 17** utilizando Standalone Components, Signals e Animations, com tema visual inspirado em **Elden Ring** (FromSoftware / Bandai Namco).
+
+> "Rise, Tarnished, and be guided by grace."
+
+---
+
+## 🌐 Demo
+
+**[portfolio-eldenring.vercel.app](https://portfolio-eldenring.vercel.app)**
 
 ---
 
@@ -8,44 +16,120 @@ API REST de autenticação e autorização desenvolvida com **Java 21**, **Sprin
 
 | Tecnologia | Uso |
 |-----------|-----|
-| **Java 21** | Linguagem principal |
-| **Spring Boot 4.x** | Framework base |
-| **Spring Security 7** | Autenticação e autorização |
-| **JWT (jjwt 0.12.6)** | Geração e validação de tokens |
-| **BCrypt** | Criptografia de senhas |
-| **Spring Data JPA** | Acesso ao banco de dados |
-| **H2 Database** | Banco em memória para desenvolvimento |
-| **Lombok** | Redução de boilerplate |
-| **Bean Validation** | Validação de dados de entrada |
-| **Swagger / OpenAPI** | Documentação da API |
+| **Angular 17** | Framework principal |
+| **TypeScript** | Tipagem estática |
+| **SCSS** | Estilização com variáveis CSS |
+| **Angular Signals** | Gerenciamento de estado do tema |
+| **Angular Animations** | Animações de entrada |
+| **IntersectionObserver** | Scroll spy da navbar |
+| **Google Fonts** | Cinzel Decorative + EB Garamond |
+| **Vercel** | Deploy e hospedagem |
+
+---
+
+## 🎨 Identidade Visual
+
+O tema foi inspirado diretamente nos sites oficiais do Elden Ring, Shadow of the Erdtree e Nightreign da Bandai Namco.
+
+| Elemento | Valor |
+|---------|-------|
+| Fundo principal | `#0a0806` |
+| Dourado principal | `#e8c840` |
+| Dourado secundário | `#d4a830` |
+| Vermelho acento | `#c03828` |
+| Tipografia títulos | Cinzel Decorative |
+| Tipografia texto | EB Garamond |
+
+O Dark/Light mode é controlado via CSS Variables — ao alternar o tema, apenas os valores das variáveis mudam, sem recarregar nada.
 
 ---
 
 ## 📁 Estrutura do Projeto
 
 ```
-src/main/java/com/gabrielveras/auth_api/
-├── controller/
-│   ├── AutenticacaoController.java  → Endpoints de registro e login
-│   └── TesteController.java         → Endpoints protegidos para teste
-├── service/
-│   └── AutenticacaoService.java     → Regras de negócio
-├── repository/
-│   └── UsuarioRepository.java       → Acesso ao banco
-├── model/
-│   ├── Usuario.java                 → Entidade do usuário
-│   └── Perfil.java                  → Enum USUARIO e ADMIN
-├── dto/
-│   ├── RegistroRequest.java         → Dados de entrada do registro
-│   ├── LoginRequest.java            → Dados de entrada do login
-│   └── AuthResponse.java            → Resposta com token JWT
-├── security/
-│   ├── JwtService.java              → Geração e validação de JWT
-│   ├── JwtFiltro.java               → Filtro de autenticação
-│   ├── SecurityConfig.java          → Configuração do Spring Security
-│   └── SwaggerConfig.java           → Configuração do Swagger
-└── exception/
-    └── GlobalExceptionHandler.java  → Tratamento global de erros
+src/
+├── app/
+│   ├── core/
+│   │   └── navbar/              → Navbar fixa com scroll spy e toggle de tema
+│   ├── sections/
+│   │   ├── hero/                → Seção principal com imagem Elden Ring de fundo
+│   │   ├── sobre/               → Apresentação, stats e links sociais
+│   │   ├── projetos/            → Cards de projetos com imagens e links
+│   │   ├── habilidades/         → Skills agrupadas por categoria
+│   │   ├── experiencia/         → Timeline de experiência profissional
+│   │   ├── curiosidades/        → Seção pessoal com jogos e interesses
+│   │   └── contato/             → Links de contato e rodapé
+│   ├── services/
+│   │   └── theme.service.ts     → Dark/Light mode com Signals + localStorage
+│   └── app.component.ts         → Componente raiz
+├── styles.scss                  → Variáveis globais dark/light e utilitários
+└── index.html                   → Google Fonts e meta tags SEO
+```
+
+---
+
+## ✨ Funcionalidades
+
+### Dark / Light Mode
+
+Gerenciado com **Angular Signals** — o estado do tema é reativo e persiste via `localStorage`. O sistema respeita a preferência do sistema operacional na primeira visita.
+
+```typescript
+theme = signal<Theme>(this.getInitialTheme());
+
+toggle(): void {
+  const next: Theme = this.theme() === 'dark' ? 'light' : 'dark';
+  this.theme.set(next);
+  localStorage.setItem('portfolio-theme', next);
+}
+```
+
+### Standalone Components
+
+Todos os componentes são standalone — sem NgModule:
+
+```typescript
+@Component({
+  selector: 'app-hero',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.scss'
+})
+export class HeroComponent {}
+```
+
+### Nova Sintaxe Angular 17
+
+Uso do novo fluxo de controle com `@for` e `@if`:
+
+```html
+@for (project of projects; track project.title) {
+  <div class="project-card">{{ project.title }}</div>
+}
+
+@if (themeService.isDark()) {
+  <span>☀</span>
+} @else {
+  <span>☾</span>
+}
+```
+
+### Scroll Spy
+
+A navbar detecta qual seção está visível usando `IntersectionObserver` nativo:
+
+```typescript
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        this.activeSection.set(entry.target.id);
+      }
+    });
+  },
+  { threshold: 0.4 }
+);
 ```
 
 ---
@@ -54,171 +138,68 @@ src/main/java/com/gabrielveras/auth_api/
 
 ### Pré-requisitos
 
-- Java 21+
-- Maven
+- Node.js 18+
+- Angular CLI 17+
 
 ### Passos
 
 Clone o repositório:
 
 ```bash
-git clone https://github.com/GabrielVeras-dev/auth-api.git
+git clone https://github.com/GabrielVeras-dev/portfolio-eldenring.git
 ```
 
 Entre na pasta:
 
 ```bash
-cd auth-api
+cd portfolio-eldenring
+```
+
+Instale as dependências:
+
+```bash
+npm install
 ```
 
 Rode o projeto:
 
 ```bash
-./mvnw spring-boot:run
+ng serve
 ```
 
-Acesse a documentação em: **http://localhost:8080/swagger-ui/index.html**
-
-Console do banco H2: **http://localhost:8080/h2-console**
+Acesse em: **http://localhost:4200**
 
 ---
 
-## 🔗 Endpoints
+## 📦 Build para Produção
 
-### Públicos — sem autenticação
+```bash
+ng build
+```
 
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| POST | `/auth/registrar` | Registra novo usuário com perfil USUARIO |
-| POST | `/auth/registrar-admin` | Registra novo usuário com perfil ADMIN |
-| POST | `/auth/login` | Autentica e retorna token JWT |
-
-### Protegidos — requer token JWT
-
-| Método | Rota | Perfil | Descrição |
-|--------|------|--------|-----------|
-| GET | `/usuario/perfil` | USUARIO ou ADMIN | Retorna dados do usuário logado |
-| GET | `/admin/painel` | ADMIN apenas | Painel exclusivo para administradores |
+Os arquivos gerados ficam em `dist/portfolio-elden/browser/`.
 
 ---
 
-## 🔐 Como Usar o Token
+## 🚀 Deploy no Vercel
 
-**1. Registre um usuário:**
+O projeto está configurado para deploy automático no Vercel.
 
-```json
-POST /auth/registrar
-{
-  "nome": "Gabriel Veras",
-  "email": "gabriel@email.com",
-  "senha": "123456"
-}
-```
-
-**2. Faça login e copie o token:**
-
-```json
-POST /auth/login
-{
-  "email": "gabriel@email.com",
-  "senha": "123456"
-}
-```
-
-**3. Use o token no header das requisições:**
-
-```
-Authorization: Bearer {seu_token_aqui}
-```
-
-**4. No Swagger:** clique em **Authorize 🔒** e cole o token.
+Todo push na branch `main` dispara um novo deploy automaticamente.
 
 ---
 
-## 🛡️ Como Funciona a Segurança
+## 📋 Seções do Portfólio
 
-### Fluxo de autenticação
-
-```
-Cliente → POST /auth/login
-       → AutenticacaoService valida credenciais com BCrypt
-       → JwtService gera token com nome e perfil
-       → Token retornado para o cliente
-
-Cliente → GET /usuario/perfil com token no header
-       → JwtFiltro intercepta a requisição
-       → JwtService valida e decodifica o token
-       → Usuário injetado no SecurityContext
-       → Controller recebe usuário via @AuthenticationPrincipal
-```
-
-### Controle de acesso
-
-| Rota | Acesso |
-|------|--------|
-| `/auth/**` | Público — sem autenticação |
-| `/usuario/**` | Qualquer usuário autenticado |
-| `/admin/**` | Somente perfil ADMIN via @PreAuthorize |
-
-### Senhas
-
-Todas as senhas são criptografadas com **BCrypt** antes de serem salvas no banco. Nunca são armazenadas em texto puro.
-
-### Token JWT
-
-O token contém as seguintes informações:
-
-- **subject** — email do usuário
-- **nome** — nome completo
-- **perfil** — USUARIO ou ADMIN
-- **iat** — data de emissão
-- **exp** — data de expiração (24 horas)
-
----
-
-## 📋 Exemplos de Resposta
-
-### Registro ou Login com sucesso
-
-```json
-{
-  "token": "eyJhbGciOiJIUzUxMiJ9...",
-  "tipo": "Bearer",
-  "nome": "Gabriel Veras",
-  "email": "gabriel@email.com",
-  "perfil": "USUARIO"
-}
-```
-
-### Erro de validação
-
-```json
-{
-  "status": 400,
-  "erro": "Dados inválidos",
-  "campos": {
-    "email": "Email inválido",
-    "senha": "Senha deve ter no mínimo 6 caracteres"
-  },
-  "timestamp": "2026-04-09T10:00:00"
-}
-```
-
-### Credenciais inválidas
-
-```json
-{
-  "status": 401,
-  "erro": "Email ou senha inválidos",
-  "timestamp": "2026-04-09T10:00:00"
-}
-```
-
-### Acesso negado
-
-```
-403 Forbidden
-```
+| Seção | Descrição |
+|-------|-----------|
+| **Hero** | Apresentação com imagem oficial do Elden Ring de fundo |
+| **Sobre** | Resumo profissional, stats e links sociais |
+| **Projetos** | Cards dos projetos com techs, descrição e links |
+| **Habilidades** | Stack técnica agrupada por categoria |
+| **Experiência** | Timeline da trajetória profissional |
+| **Curiosidades** | Seção pessoal com jogos e interesses |
+| **Contato** | Email, LinkedIn, GitHub e WhatsApp |
 
 ---
 
@@ -229,3 +210,8 @@ Desenvolvedor Backend Java | Spring Boot | APIs REST
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-dev--gabrielveras-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/dev-gabrielveras/)
 [![GitHub](https://img.shields.io/badge/GitHub-GabrielVeras--dev-black?style=flat&logo=github)](https://github.com/GabrielVeras-dev)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Elden%20Ring-gold?style=flat)](https://portfolio-eldenring.vercel.app)
+
+---
+
+> As imagens utilizadas pertencem à **FromSoftware / Bandai Namco** e são usadas apenas como referência visual sem fins comerciais.
