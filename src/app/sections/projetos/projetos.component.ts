@@ -46,6 +46,13 @@ export class ProjetosComponent {
       techs: ['Java 17', 'Collections', 'POO','Core Java','Collections'],
       githubUrl: 'https://github.com/GabrielVeras-dev/java-core-practice',
       imgUrl: 'assets/images/javacore.jpeg'
-    }
+    },
+  {
+    title: 'Auth API',
+    description: 'API de autenticação e autorização com Spring Security e JWT. Registro, login, controle de perfis USUARIO e ADMIN, tokens JWT, BCrypt e tratamento de erros.',
+    techs: ['Java 21', 'Spring Boot', 'Spring Security', 'JWT', 'H2', 'Swagger'],
+    githubUrl: 'https://github.com/GabrielVeras-dev/auth-api',
+    imgUrl: 'https://p325k7wa.twic.pics/high/elden-ring/elden-ring/08-shadow-of-the-erdtree/elden-ring-expansion-SOTE/00-page-content/Screenshot-4.png?twic=v1/cover=800/step=10/quality=80'
+  }
   ];
 }
