@@ -33,6 +33,13 @@ export class ProjetosComponent {
       githubUrl: 'https://github.com/GabrielVeras-dev/financas-api',
       imgUrl: 'assets/images/financasapi.jpeg'
     },
+  {
+    title: 'Estoque API',
+    description: 'API REST para gestão de estoque e pedidos com inteligência artificial integrada. Controle de categorias, fornecedores, produtos e movimentações.',
+    techs: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Spring AI'],
+    githubUrl: 'https://github.com/GabrielVeras-dev/estoque-api',
+    imgUrl: 'assets/images/estoqueapi.jpeg'  // após baixar para public/images/
+  },
     {
       title: 'Java OOP Practice',
       description: 'Projeto dedicado à prática dos 4 pilares da POO: Encapsulamento, Herança, Polimorfismo e Abstração, com modelagem orientada a objetos.',
